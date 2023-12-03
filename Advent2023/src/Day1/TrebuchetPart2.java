@@ -7,10 +7,11 @@ import java.util.ArrayList;
 // https://stackoverflow.com/questions/16242733/sum-all-the-elements-java-arraylist
 
 /**
- * Day 1: Trebuchet?!
+ * Day 1: Trebuchet?! Part 2
  * What is the sum of all calibration values?
+ * This time account for "one" = 1
  */
-public class Trebuchet {
+public class TrebuchetPart2 {
     public static void main(ArrayList<String> calibrationArray) {
         System.out.println("--Trebuchet.main--");
         System.out.println("calibrationArray length: " + calibrationArray.size());
