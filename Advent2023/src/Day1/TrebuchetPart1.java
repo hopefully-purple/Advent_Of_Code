@@ -9,6 +9,7 @@ import java.util.ArrayList;
 /**
  * Day 1: Trebuchet?! Part 1
  * What is the sum of all calibration values?
+ * https://adventofcode.com/2023/day/1
  */
 public class TrebuchetPart1 {
     public static void main(ArrayList<String> calibrationArray) {
