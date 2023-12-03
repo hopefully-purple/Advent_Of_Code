@@ -1,6 +1,7 @@
 ## How to use
 
 Run the project from App.main
+In App.main, change the input file being read to the Buffered Reader to the desired file. Then call the desired class.main and hit run!
 
 
 
