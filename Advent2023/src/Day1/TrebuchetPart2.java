@@ -30,7 +30,7 @@ public class TrebuchetPart2 {
 
         // Step 1: Get all calibration values
         ArrayList<Integer> values = calculateCalibrationValues(sampleArray);
-        // System.out.println(values);
+        System.out.println(values);
         // Step 2: Sum up calibration values
         int sum = 0;
         for (int v : values) {
@@ -56,6 +56,8 @@ public class TrebuchetPart2 {
 
         ArrayList<Integer> valuesArray = new ArrayList<>();
         for (String cal : calArray) {
+            // step 0: scan string for written numbers
+            getWrittenNumbers(cal);
             // step 1: parse cal, build a string of only ints
             String numbers = cal.replaceAll("[\\D]", "");
             int numLength = numbers.length();
@@ -79,5 +81,43 @@ public class TrebuchetPart2 {
         }
 
         return valuesArray;
+    }
+
+    private static void getWrittenNumbers(String s) {
+        
+    }
+
+    // twentyeight = 208 = 28
+    // 13twentyeight9 = 132089 = 19
+    // twentyeight7 = 2087 = 27
+    // sixteen5 = 165 = 15
+    // 4sixteen = 416 = 46
+    // onehundredseventytwo = 100702 = 172 = 12 ?
+    private static String switchOnDigits(String s) {
+        switch(s) {
+            case "zero":
+            case "hundred":
+                return "0";
+            case "one":
+                return "1";
+            case "two":
+                return "2";
+            case "three":
+                return "3";
+            case "four":
+                return "4";
+            case "five":
+                return "5";
+            case "six":
+                return "6";
+            case "seven":
+                return "7";
+            case "eight":
+                return "8";
+            case "nine":
+                return "9";
+            default:
+                return "";
+        }
     }
 }
