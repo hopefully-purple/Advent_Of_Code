@@ -25,8 +25,8 @@ public class Trebuchet {
 
 
         // Step 1: Get all calibration values
-        ArrayList<Integer> values = calculateCalibrationValues(sampleArray);
-        System.out.println(values);
+        ArrayList<Integer> values = calculateCalibrationValues(calibrationArray);
+        // System.out.println(values);
         // Step 2: Sum up calibration values
         int sum = 0;
         for (int v : values) {
@@ -56,7 +56,6 @@ public class Trebuchet {
             if (numLength == 0) {
                 continue;
             }
-
             int value = 0;
             // step 3: if string.length is 1, convert to int, multiply by 11
             if (numLength == 1) {
