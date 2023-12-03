@@ -13,20 +13,23 @@ import java.util.ArrayList;
  */
 public class TrebuchetPart2 {
     public static void main(ArrayList<String> calibrationArray) {
-        System.out.println("--Trebuchet.main--");
+        System.out.println("--TrebuchetPart2.main--");
         System.out.println("calibrationArray length: " + calibrationArray.size());
 
         //Create sample array
         ArrayList<String> sampleArray = new ArrayList<String>();
-        sampleArray.add("1abc2");
-        sampleArray.add("pqr3stu8vwx");
-        sampleArray.add("a1b2c3d4e5f");
-        sampleArray.add("treb7uchet");
+        sampleArray.add("two1nine");
+        sampleArray.add("eightwothree");
+        sampleArray.add("abcone2threexyz");
+        sampleArray.add("xtwone3four");
+        sampleArray.add("4nineeightseven2");
+        sampleArray.add("zoneight234");
+        sampleArray.add("7pqrstsixteen");
         sampleArray.add("nonumberscase");
 
 
         // Step 1: Get all calibration values
-        ArrayList<Integer> values = calculateCalibrationValues(calibrationArray);
+        ArrayList<Integer> values = calculateCalibrationValues(sampleArray);
         // System.out.println(values);
         // Step 2: Sum up calibration values
         int sum = 0;
@@ -38,12 +41,15 @@ public class TrebuchetPart2 {
     }
 
     /**
-     * 1abc2
-     * pqr3stu8vwx
-     * a1b2c3d4e5f
-     * treb7uchet
+     * two1nine
+     * eightwothree
+     * abcone2threexyz
+     * xtwone3four
+     * 4nineeightseven2
+     * zoneight234
+     * 7pqrstsixteen
      * 
-     * 12, 38, 15, 77 = 142
+     * 29, 83, 13, 24, 42, 14, 76 = 281
      * @param calArray
      */
     private static ArrayList<Integer> calculateCalibrationValues(ArrayList<String> calArray) {

@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class TrebuchetPart1 {
     public static void main(ArrayList<String> calibrationArray) {
-        System.out.println("--Trebuchet.main--");
+        System.out.println("--TrebuchetPart1.main--");
         System.out.println("calibrationArray length: " + calibrationArray.size());
 
         //Create sample array
