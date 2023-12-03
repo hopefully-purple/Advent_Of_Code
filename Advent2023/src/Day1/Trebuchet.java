@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 //Resources that contribute to solution:
 // https://stackoverflow.com/questions/2338790/get-int-from-string-also-containing-letters-in-java
-
+// https://stackoverflow.com/questions/16242733/sum-all-the-elements-java-arraylist
 
 /**
  * Day 1: Trebuchet?!
@@ -28,9 +28,12 @@ public class Trebuchet {
         ArrayList<Integer> values = calculateCalibrationValues(sampleArray);
         System.out.println(values);
         // Step 2: Sum up calibration values
-
+        int sum = 0;
+        for (int v : values) {
+            sum += v;
+        }
         // Step 3: Return final value (print)
-
+        System.out.println(sum);
     }
 
     /**
