@@ -1,5 +1,7 @@
 //Resources that contribute to solution:
 
+import java.util.ArrayList;
+
 /**
  * Day #:
  * 

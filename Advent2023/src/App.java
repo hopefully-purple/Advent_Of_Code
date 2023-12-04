@@ -3,8 +3,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Day1.TrebuchetPart1;
-import Day1.TrebuchetPart2;
+import main.Day1.TrebuchetPart1;
+import main.Day1.TrebuchetPart2;
+import main.Day2.CubeConundrumPart1;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -14,7 +15,7 @@ public class App {
 
         ArrayList<String> inputArray = new ArrayList<String>();
         try {
-            reader = new BufferedReader(new FileReader("inputFiles/Day1PuzzleInput1.txt"));
+            reader = new BufferedReader(new FileReader("inputFiles/Day2PuzzleInput2.txt"));
             String line = reader.readLine();
             System.out.println("Reading input file...");
             while (line != null) {
@@ -33,7 +34,8 @@ public class App {
         System.out.println("Beginning program...");
 
         // TrebuchetPart1.main(inputArray);
-        TrebuchetPart2.main(inputArray);
+        // TrebuchetPart2.main(inputArray);
+        CubeConundrumPart1.main(inputArray);
 
         System.out.println("Program complete!");
     }
