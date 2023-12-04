@@ -1,6 +1,7 @@
-//Resources that contribute to solution:
 
 import java.util.ArrayList;
+
+//Resources that contribute to solution:
 
 /**
  * Day #:
