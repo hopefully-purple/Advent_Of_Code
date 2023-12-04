@@ -5,13 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Day 2: Cube Conundrum part 1
- * Determine which games would have been possible if the bag had been loaded with only 
- * 12 red cubes, 13 green cubes, and 14 blue cubes. 
- * What is the sum of the IDs of those games?
+ * Day 2: Cube Conundrum part 2
+ * For each game, find the minimum set of cubes that must have been present. 
+ * What is the sum of the power of these sets?
  * https://adventofcode.com/2023/day/2
  */
-public class CubeConundrumPart1 {
+public class CubeConundrumPart2 {
     public static void main(ArrayList<String> inputArray) {
         System.out.println("--CubeConundrum.main--");
         System.out.println("inputArray length: " + inputArray.size());
@@ -33,50 +32,49 @@ public class CubeConundrumPart1 {
         // System.out.println(gameList.get(1).get(0)[1]);
         // System.out.println(gameList.get(1).get(0)[2]);
 
-        // step 2: Initialize cube amount array
-        int[] officialCubeCount = new int[]{12, 13, 14};
-
         // step 3: call gameAnalyzer
-        List<Integer> possibleGames = gameAnalyzer(gameList, officialCubeCount);
-        System.out.println(possibleGames);
+        List<int[]> minimumGamesCount = gameAnalyzer(gameList);
+        // System.out.println(minimumGamesCount.size() + " size of minimumGamesCount");
 
-        // step 4: sum the ids
+        // step 4: get the power of each set and sum
         int sum = 0;
-        for (Integer id : possibleGames) {
-            sum += id;
+        for (int[] minCount : minimumGamesCount) {
+            int power = 1;
+            for (int i = 0; i < 3; i++) {
+                power *= minCount[i];
+            }
+            // System.out.println(power);
+            sum += power;
         }
 
         // Final answer:
         System.out.println(sum);
     }
 
-    private static List<Integer> gameAnalyzer(List<List<int[]>> gameList, int[] officialCubeCount) {
-        List<Integer> possibleGames = new ArrayList<>();
+    private static List<int[]> gameAnalyzer(List<List<int[]>> gameList) {
+        List<int[]> minimumCountsEachGame = new ArrayList<>();
 
-        // Idea 1: assume this doesn't have anything to do with probability
-        // and just straight up check for numbers greater than the counts?
+        // Idea 1: start with a minCount array to compare to
+        // if a color is > current val, replace
+        // then store minCount array
 
         for (List<int[]> game : gameList) {
             if (game == null) {
                 continue;
             }
-            boolean isGamePossible = true;
+            int [] minimumCounts = new int[3];
             for (int[] round : game) {
                 for (int i = 0; i < 3; i++) {
-                    if (round[i] > officialCubeCount[i]) {
-                        isGamePossible = false;
-                        break;
+                    if (round[i] > minimumCounts[i]) {
+                        minimumCounts[i] = round[i];
                     }
                 }
             }
 
-            if (isGamePossible) {
-                int id = gameList.indexOf(game);
-                possibleGames.add(id);
-            }
+            minimumCountsEachGame.add(minimumCounts);
         }
 
-        return possibleGames;
+        return minimumCountsEachGame;
     }
 
     private static List<List<int[]>> buildGameList(ArrayList<String> inputArray){

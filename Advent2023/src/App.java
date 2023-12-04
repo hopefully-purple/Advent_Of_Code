@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import main.Day1.TrebuchetPart1;
 import main.Day1.TrebuchetPart2;
 import main.Day2.CubeConundrumPart1;
+import main.Day2.CubeConundrumPart2;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -35,7 +36,8 @@ public class App {
 
         // TrebuchetPart1.main(inputArray);
         // TrebuchetPart2.main(inputArray);
-        CubeConundrumPart1.main(inputArray);
+        // CubeConundrumPart1.main(inputArray);
+        CubeConundrumPart2.main(inputArray);
 
         System.out.println("Program complete!");
     }
