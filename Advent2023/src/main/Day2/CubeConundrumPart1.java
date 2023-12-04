@@ -25,7 +25,7 @@ public class CubeConundrumPart1 {
         sampleArray.add("Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green");
 
         // step 1: Build List<array>
-        List<List<int[]>> gameList = buildGameList(sampleArray);
+        List<List<int[]>> gameList = buildGameList(inputArray);
         // System.out.println(gameList.size() + " size of gameList");
         // System.out.println(gameList.get(1).size() + " size of game 1");
         // System.out.println(gameList.get(1).get(0).length + " game 1 round 1 length");
